@@ -10,11 +10,11 @@ function Article(props) {
 	function addLike(e) {
 		e.preventDefault();
 
-		props.onLikeAdd(articleId);
+		props.onParamAdd(articleId, 'like');
 	}
 
 	function addWatch(e) {
-		props.onWatchedAdd(articleId);
+		props.onParamAdd(articleId, 'watched');
 	}
 
 
@@ -51,8 +51,7 @@ Article.propTypes = {
 	link: PropTypes.string,
 	description: PropTypes.string,
 	img: PropTypes.string,
-	onLikeAdd: PropTypes.func.isRequired,
-	onWatchedAdd: PropTypes.func.isRequired,
+	onParamAdd: PropTypes.func.isRequired,
 	id: PropTypes.string,
 	like: PropTypes.number
 }

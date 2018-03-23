@@ -27,27 +27,14 @@ class App extends Component {
   		loaded: false
   	};
 
-  	this.likeAdd = this.likeAdd.bind(this);
-  	this.watchedAdd = this.watchedAdd.bind(this);
+  	this.paramAdd = this.paramAdd.bind(this);
   	this.search = this.search.bind(this);
   }
 
-  likeAdd(id) {
+  paramAdd(id, param) {
 	const articles = this.state.articles.map( article => {
 		if (article.publishedAt === id) {
-			article.like ? article.like += 1 : article.like = 1;
-		}
-
-		return article;
-	})
-
-	this.setState({articles});
-  }
-
-  watchedAdd(id) {
-  	const articles = this.state.articles.map( article => {
-		if (article.publishedAt === id) {
-			article.watched ? article.watched += 1 : article.watched = 1;
+			article[param] ? article[param] += 1 : article[param] = 1;
 		}
 
 		return article;
@@ -97,8 +84,7 @@ class App extends Component {
 									img={article.urlToImage}
 									like={article.like}
 									watched={article.watched}
-									onLikeAdd={this.likeAdd}
-									onWatchedAdd={this.watchedAdd}
+									onParamAdd={this.paramAdd}
 								/>
 							)
 						:
