@@ -17,6 +17,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
 * Clone or download this repository
 * In the project directory, you can run:
 
+### `npm install`
 ### `npm start`
 
 ## Folder Structure
@@ -53,7 +54,6 @@ For the project to build, **these files must exist with exact filenames**:
 ## Available Scripts
 
 In the project directory, you can run:
-### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.<br>
